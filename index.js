@@ -1,3 +1,14 @@
+// Main operator setup
+const firstNum = '';
+const operator = '';
+const secondNum = '';
+function operate(a, b, op) {
+    if (op == '+') return add(a, b);
+    else if (op == '-') return subtract(a, b);
+    else if (op == '*') return multiply(a, b);
+    else if (op == '/') return divide(a, b);
+}
+// Calculation functions
 function add(a, b) {
     const sum = a + b;
     return sum;

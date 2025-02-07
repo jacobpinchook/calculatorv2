@@ -1,21 +1,35 @@
 * {
-
+    font-family: "Gill Sans Extrabold", sans-serif;
 }
 
 body {
-
+    display: flex; 
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .container {
-
+    margin: auto;
+    width: 250px;
+    height: 400px;
+    background-color: black;
+    border: solid black;
 }
 
 .container p {
-
+    display: flex;
+    justify-content: end;
+    margin: 5px 5px 5px 5px;
+    font-size: 40px;
+    background-color: grey;
+    color: white;
 }
 
 .button {
-
+    background-color: white;
+    border: solid black;
+    border-radius: 5%;
+    
 }
 
 .action {
@@ -23,5 +37,5 @@ body {
 }
 
 .number {
-    
+
 }

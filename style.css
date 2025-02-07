@@ -21,14 +21,26 @@ body {
     justify-content: end;
     margin: 5px 5px 5px 5px;
     font-size: 40px;
-    background-color: grey;
+    /* background-color: grey; */
     color: white;
 }
 
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 .button {
+    font-size: 20px;
     background-color: white;
     border: solid black;
     border-radius: 5%;
+    width: 45px;
+    height: 25px;
+    margin: auto;
+    text-align: center;
     
 }
 

@@ -11,7 +11,7 @@ body {
 .container {
     margin: auto;
     width: 250px;
-    height: 400px;
+    height: 275px;
     background-color: black;
     border: solid black;
 }
@@ -21,7 +21,6 @@ body {
     justify-content: end;
     margin: 5px 5px 5px 5px;
     font-size: 40px;
-    /* background-color: grey; */
     color: white;
 }
 
@@ -30,24 +29,37 @@ body {
     flex-wrap: wrap;
     margin-left: 5px;
     margin-right: 5px;
+    /* background-color: white; */
+    gap: 6px;
+    justify-content: cen;
 }
 
 .button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 35px;
+    text-align: center;
+    flex: 1 1 calc(25% - 10px);
     font-size: 20px;
     background-color: white;
     border: solid black;
     border-radius: 5%;
-    width: 45px;
-    height: 25px;
-    margin: auto;
-    text-align: center;
-    
 }
 
 .action {
-
+    color: white;
+    background-color: grey;
 }
 
 .number {
+    background-color: lightgrey;
+}
 
+.calc {
+    background-color: orange;
+}
+
+.equals {
+    flex: 1 1 calc(50% - 10px);
 }

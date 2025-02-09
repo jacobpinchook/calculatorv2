@@ -26,14 +26,20 @@ function divide(a, b) {
     return remainder;
 }
 
+let currentInput = '';
+
+function appendValue(value) {
+    currentInput += value; // Concatenate the value to current input
+    document.getElementById('calc').innerHTML = currentInput;
+}
+
 const container = document.getElementById('container');
-const calculation = document.getElementById('calculation');
 
 container.addEventListener('click', function(event) {
     if (event.target.classList.contains('button')) {
         const value = event.target.textContent;
         console.log('Clicked div value:', value);
 
-        calculation.innerHTML = `${calculation.textContent}${value}`;
+        appendValue(value);
     }
 });

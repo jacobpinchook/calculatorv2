@@ -25,3 +25,12 @@ function divide(a, b) {
     const remainder = a / b;
     return remainder;
 }
+
+const container = document.getElementById('container');
+
+container.addEventListener('click', function(event) {
+    if (event.target.classList.contains('button')) {
+        const value = event.target.textContent;
+        console.log('Clicked div value:', value);
+    }
+});

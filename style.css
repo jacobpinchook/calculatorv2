@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
 }
 
-.container {
+#container {
     margin: auto;
     width: 250px;
     height: 275px;
@@ -17,7 +17,7 @@ body {
     border: solid black;
 }
 
-.container p {
+#container p {
     display: flex;
     justify-content: end;
     margin: 5px 5px 5px 5px;
@@ -30,7 +30,6 @@ body {
     flex-wrap: wrap;
     margin-left: 5px;
     margin-right: 5px;
-    /* background-color: white; */
     gap: 6px;
     justify-content: cen;
 }

@@ -34,6 +34,6 @@ container.addEventListener('click', function(event) {
         const value = event.target.textContent;
         console.log('Clicked div value:', value);
 
-        calculation.textContent = `${calculation.textContent}${value}`;
+        calculation.innerHTML = `${calculation.textContent}${value}`;
     }
 });

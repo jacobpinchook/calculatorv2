@@ -27,10 +27,13 @@ function divide(a, b) {
 }
 
 const container = document.getElementById('container');
+const calculation = document.getElementById('calculation');
 
 container.addEventListener('click', function(event) {
     if (event.target.classList.contains('button')) {
         const value = event.target.textContent;
         console.log('Clicked div value:', value);
+
+        calculation.textContent = `${calculation.textContent}${value}`;
     }
 });

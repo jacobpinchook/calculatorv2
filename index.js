@@ -40,6 +40,10 @@ container.addEventListener('click', function(event) {
         const value = event.target.textContent;
         console.log('Clicked div value:', value);
 
+
+        // Add checks for appending a value
         appendValue(value);
+
+        // If =, calculate answer and update
     }
 });

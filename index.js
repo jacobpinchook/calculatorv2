@@ -33,6 +33,14 @@ function appendValue(value) {
     document.getElementById('calc').innerHTML = currentInput;
 }
 
+function eval(val) {
+    //split value string into array
+    
+    //Call certain calculation function based on operator
+
+    // return result
+}
+
 const container = document.getElementById('container');
 
 container.addEventListener('click', function(event) {
@@ -45,5 +53,6 @@ container.addEventListener('click', function(event) {
         appendValue(value);
 
         // If =, calculate answer and update
+        if(value == "=") eval(value);
     }
 });

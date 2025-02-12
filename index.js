@@ -1,33 +1,26 @@
-// Main operator setup
-const firstNum = '';
-const operator = '';
-const secondNum = '';
+// Calculation functions
+function add(a, b) {
+    return a + b;
+}
+function subtract(a, b) {
+    return a - b;
+}
+function multiply(a, b) {
+    return a * b;
+}
+function divide(a, b) {
+    return a / b;
+}
+
 function operate(arr) {
     val1 = arr[0];
     op = arr[1];
     val2 = arr[2];
-    if (op == '+') return add(val1, val2);
+    if (op == '+') console.log(add(val1, val2));
+    // document.getElementById('calc').innerHTML = add(val1, val2);
     else if (op == '-') return subtract(val1, val2);
     else if (op == 'x') return multiply(val1, val2);
     else if (op == '/') return divide(val1, val2);
-}
-
-// Calculation functions
-function add(a, b) {
-    const sum = a + b;
-    return sum;
-}
-function subtract(a, b) {
-    const subtrahend = a - b;
-    return subtrahend;
-}
-function multiply(a, b) {
-    const product = a * b;
-    return product;
-}
-function divide(a, b) {
-    const remainder = a / b;
-    return remainder;
 }
 
 let currentInput = '';
@@ -37,12 +30,12 @@ function appendValue(value) {
     document.getElementById('calc').innerHTML = currentInput;
 }
 
-function eval(val) {
-    //split value string into array
+function evaluate() {
+    // Convert string into an array [number1, operator, number2]
     const arr = document.getElementById('calc').innerHTML.split(/([+-/x])/);
     console.log(arr);
 
-    console.log(operate(arr));
+    operate(arr);
 }
 
 const container = document.getElementById('container');
@@ -52,12 +45,14 @@ container.addEventListener('click', function(event) {
         const value = event.target.textContent;
         console.log('Clicked div value:', value);
 
-
         // Add checks for appending a value
         console.log(value);
         if (value == "=") {
-            eval(document.getElementById('calc').innerHTML);
-        } else {
+            evaluate();
+        } else if (value == "AC") {
+            document.getElementById('calc').innerHTML = 0;
+            value = '';
+        } else {  
             appendValue(value);
         }
     }

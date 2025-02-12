@@ -51,7 +51,7 @@ container.addEventListener('click', function(event) {
             evaluate();
         } else if (value == "AC") {
             document.getElementById('calc').innerHTML = 0;
-            value = '';
+            currentInput = '';
         } else {  
             appendValue(value);
         }

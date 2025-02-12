@@ -1,4 +1,6 @@
 // Calculation functions
+
+// TODO: fix add function
 function add(a, b) {
     return a + b;
 }
@@ -16,11 +18,19 @@ function operate(arr) {
     val1 = arr[0];
     op = arr[1];
     val2 = arr[2];
-    if (op == '+') console.log(add(val1, val2));
-    // document.getElementById('calc').innerHTML = add(val1, val2);
-    else if (op == '-') return subtract(val1, val2);
-    else if (op == 'x') return multiply(val1, val2);
-    else if (op == '/') return divide(val1, val2);
+    if (op == '+') {
+        document.getElementById('calc').innerHTML = add(val1, val2);
+        currentInput = add(val1, val2);
+    } else if (op == '-') {
+        document.getElementById('calc').innerHTML = subtract(val1, val2);
+        currentInput = subtract(val1, val2);
+    } else if (op == 'x') {
+        document.getElementById('calc').innerHTML = multiply(val1, val2);
+        currentInput = multiply(val1, val2);
+    } else if (op == '÷') {
+        document.getElementById('calc').innerHTML = divide(val1, val2);
+        currentInput = divide(val1, val2);
+    }    
 }
 
 let currentInput = '';
@@ -32,7 +42,7 @@ function appendValue(value) {
 
 function evaluate() {
     // Convert string into an array [number1, operator, number2]
-    const arr = document.getElementById('calc').innerHTML.split(/([+-/x])/);
+    const arr = document.getElementById('calc').innerHTML.split(/([+\-÷x])/);
     console.log(arr);
 
     operate(arr);

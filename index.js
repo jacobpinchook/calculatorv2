@@ -36,9 +36,9 @@ function appendValue(value) {
 function eval(val) {
     //split value string into array
     
-    //Call certain calculation function based on operator
 
     // return result
+    operate(a, b, op);
 }
 
 const container = document.getElementById('container');
@@ -50,9 +50,11 @@ container.addEventListener('click', function(event) {
 
 
         // Add checks for appending a value
-        appendValue(value);
-
-        // If =, calculate answer and update
-        if(value == "=") eval(value);
+        console.log(value);
+        if (document.getElementById('calc').innerHTML.includes("=")) {
+            eval(document.getElementById('calc').innerHTML);
+        } else {
+            appendValue(value);
+        }
     }
 });

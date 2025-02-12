@@ -2,12 +2,16 @@
 const firstNum = '';
 const operator = '';
 const secondNum = '';
-function operate(a, b, op) {
-    if (op == '+') return add(a, b);
-    else if (op == '-') return subtract(a, b);
-    else if (op == '*') return multiply(a, b);
-    else if (op == '/') return divide(a, b);
+function operate(arr) {
+    val1 = arr[0];
+    op = arr[1];
+    val2 = arr[2];
+    if (op == '+') return add(val1, val2);
+    else if (op == '-') return subtract(val1, val2);
+    else if (op == 'x') return multiply(val1, val2);
+    else if (op == '/') return divide(val1, val2);
 }
+
 // Calculation functions
 function add(a, b) {
     const sum = a + b;
@@ -35,10 +39,10 @@ function appendValue(value) {
 
 function eval(val) {
     //split value string into array
-    
+    const arr = document.getElementById('calc').innerHTML.split(/([+-/x])/);
+    console.log(arr);
 
-    // return result
-    operate(a, b, op);
+    console.log(operate(arr));
 }
 
 const container = document.getElementById('container');
@@ -51,7 +55,7 @@ container.addEventListener('click', function(event) {
 
         // Add checks for appending a value
         console.log(value);
-        if (document.getElementById('calc').innerHTML.includes("=")) {
+        if (value == "=") {
             eval(document.getElementById('calc').innerHTML);
         } else {
             appendValue(value);

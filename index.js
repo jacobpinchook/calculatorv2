@@ -44,6 +44,10 @@ function evaluate() {
     console.log(arr);
 
     operate(arr);
+
+    // TODO: Finish limiting input to a certain digit count
+    // document.getElementById('calc').innerHTML = Math.floor(document.getElementById('calc').innerHTML / 1e0) % 1e10;
+    // currentInput = Math.floor(currentInput / 1e0) % 1e10;
 }
 
 const container = document.getElementById('container');
@@ -52,6 +56,8 @@ container.addEventListener('click', function(event) {
     if (event.target.classList.contains('button')) {
         const value = event.target.textContent;
         console.log('Clicked div value:', value);
+
+        // TODO: Prevent multiple operators from being clicked
 
         // Add checks for appending a value
         console.log(value);

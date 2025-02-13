@@ -15,9 +15,9 @@ function divide(a, b) {
 }
 
 function operate(arr) {
-    val1 = arr[0];
+    val1 = Number(arr[0]);
     op = arr[1];
-    val2 = arr[2];
+    val2 = Number(arr[2]);
     if (op == '+') {
         document.getElementById('calc').innerHTML = add(val1, val2);
         currentInput = add(val1, val2);
@@ -62,7 +62,10 @@ container.addEventListener('click', function(event) {
         } else if (value == "AC") {
             document.getElementById('calc').innerHTML = 0;
             currentInput = '';
-        } else {  
+        } else if (value == "DEL") {
+            currentInput.slice(0, -1);
+            document.getElementById('calc').innerHTML = currentInput;
+        } else { 
             appendValue(value);
         }
     }

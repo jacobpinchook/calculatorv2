@@ -61,8 +61,13 @@ container.addEventListener('click', function(event) {
             document.getElementById('calc').innerHTML = 0;
             currentInput = '';
         } else if (value == "DEL") {
-            currentInput.slice(0, -1);
-            document.getElementById('calc').innerHTML = currentInput;
+            if (currentInput.length == 1) {
+                currentInput = '';
+                document.getElementById('calc').innerHTML = '0'
+            }  else {
+                currentInput = currentInput.slice(0, -1);
+                document.getElementById('calc').innerHTML = currentInput;
+            }
         } else { 
             appendValue(value);
         }

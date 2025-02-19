@@ -60,8 +60,6 @@ container.addEventListener('click', function(event) {
         const value = event.target.textContent;
         console.log('Clicked div value:', value);
 
-        
-
         // Add checks for appending a value
         console.log(value);
         if (value == "=") {

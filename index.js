@@ -12,6 +12,9 @@ function divide(a, b) {
     return a / b;
 }
 
+// Variables
+const operators = ["+", "-", "÷", "x"];
+
 function operate(arr) {
     val1 = Number(arr[0]);
     op = arr[1];
@@ -57,8 +60,8 @@ container.addEventListener('click', function(event) {
         const value = event.target.textContent;
         console.log('Clicked div value:', value);
 
-        // TODO: Prevent multiple operators from being clicked
-
+        // TODO: resolve conflict between +/- and operator logic 
+        
         // Add checks for appending a value
         console.log(value);
         if (value == "=") {
@@ -75,8 +78,17 @@ container.addEventListener('click', function(event) {
                 document.getElementById('calc').innerHTML = currentInput;
             }
         } else if (value == "+/-") {
+            if (operators.some(operator => document.getElementById('calc').innerHTML.includes(operator))) {
+                console.log("true");
+            }
             currentInput = currentInput * -1;
             document.getElementById('calc').innerHTML = currentInput;
+        } else if (value == "+" || value == "-") {
+            if (operators.some(operator => document.getElementById('calc').innerHTML.includes(operator))) {
+                return;
+            } else {
+                appendValue(value);
+            }
         } else { 
             appendValue(value);
         }

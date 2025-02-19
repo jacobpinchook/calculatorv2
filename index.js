@@ -14,7 +14,9 @@ function divide(a, b) {
 
 // Variables
 const operators = ["+", "-", "÷", "x"];
+let currentInput = '';
 
+// Calculates result
 function operate(arr) {
     val1 = Number(arr[0]);
     op = arr[1];
@@ -34,13 +36,13 @@ function operate(arr) {
     }    
 }
 
-let currentInput = '';
-
+// Adds the value of the button to a currentInput variable and the HTML
 function appendValue(value) {
     currentInput += value; // Concatenate the value to current input
     document.getElementById('calc').innerHTML = currentInput;
 }
 
+// Splits the current input string into an array and calls the operate function
 function evaluate() {
     // Convert string into an array [number1, operator, number2]
     const arr = document.getElementById('calc').innerHTML.split(/([+\-÷x])/);
@@ -53,10 +55,13 @@ function evaluate() {
     // currentInput = Math.floor(currentInput / 1e0) % 1e10;
 }
 
+// Event listener for the container that holds the calculator
 const container = document.getElementById('container');
 
 container.addEventListener('click', function(event) {
+    // Listens for a click of a button
     if (event.target.classList.contains('button')) {
+        // Stores the value of the clicked button
         const value = event.target.textContent;
         console.log('Clicked div value:', value);
 

@@ -60,8 +60,8 @@ container.addEventListener('click', function(event) {
         const value = event.target.textContent;
         console.log('Clicked div value:', value);
 
-        // TODO: resolve conflict between +/- and operator logic 
         
+
         // Add checks for appending a value
         console.log(value);
         if (value == "=") {
@@ -77,13 +77,15 @@ container.addEventListener('click', function(event) {
                 currentInput = currentInput.slice(0, -1);
                 document.getElementById('calc').innerHTML = currentInput;
             }
+            // TODO: fix button click after an operator is added to the calculation
         } else if (value == "+/-") {
             if (operators.some(operator => document.getElementById('calc').innerHTML.includes(operator))) {
                 console.log("true");
             }
             currentInput = currentInput * -1;
             document.getElementById('calc').innerHTML = currentInput;
-        } else if (value == "+" || value == "-") {
+            // TODO: resolve conflict between +/- and operator logic 
+        } else if (value == "+" || value == "-" || value == "x" || value == "÷") {
             if (operators.some(operator => document.getElementById('calc').innerHTML.includes(operator))) {
                 return;
             } else {

@@ -74,6 +74,9 @@ container.addEventListener('click', function(event) {
                 currentInput = currentInput.slice(0, -1);
                 document.getElementById('calc').innerHTML = currentInput;
             }
+        } else if (value == "+/-") {
+            currentInput = currentInput * -1;
+            document.getElementById('calc').innerHTML = currentInput;
         } else { 
             appendValue(value);
         }

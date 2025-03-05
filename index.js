@@ -31,6 +31,12 @@ function operate(arr) {
         document.getElementById('calc').innerHTML = multiply(val1, val2);
         currentInput = multiply(val1, val2);
     } else if (op == '÷') {
+        // let answer = divide(val1, val2);
+        // if (answer.includes(".")) {
+        //     (answer = answer.toFixed(2));
+        // } else {
+        //     answer;
+        // }    
         document.getElementById('calc').innerHTML = divide(val1, val2);
         currentInput = divide(val1, val2);
     }    
@@ -49,10 +55,6 @@ function evaluate() {
     console.log(arr);
 
     operate(arr);
-
-    // TODO: Finish limiting input to a certain digit count
-    // document.getElementById('calc').innerHTML = Math.floor(document.getElementById('calc').innerHTML / 1e0) % 1e10;
-    // currentInput = Math.floor(currentInput / 1e0) % 1e10;
 }
 
 // Event listener for the container that holds the calculator
@@ -65,11 +67,16 @@ container.addEventListener('click', function(event) {
         const value = event.target.textContent;
         console.log('Clicked div value:', value);
 
+        // if (document.getElementById('calc').innerHTML.length >= 10) {
+
+        //     return;
+        // }
+
         // Add checks for appending a value
         console.log(value);
         if (value == "=") {
             evaluate();
-        } else if (value == "AC") {
+        } else if (value == "CLEAR") {
             document.getElementById('calc').innerHTML = 0;
             currentInput = '';
         } else if (value == "DEL") {
@@ -80,14 +87,6 @@ container.addEventListener('click', function(event) {
                 currentInput = currentInput.slice(0, -1);
                 document.getElementById('calc').innerHTML = currentInput;
             }
-            // TODO: fix button click after an operator is added to the calculation
-        } else if (value == "+/-") {
-            if (operators.some(operator => document.getElementById('calc').innerHTML.includes(operator))) {
-                console.log("true");
-            }
-            currentInput = currentInput * -1;
-            document.getElementById('calc').innerHTML = currentInput;
-            // TODO: resolve conflict between +/- and operator logic 
         } else if (value == "+" || value == "-" || value == "x" || value == "÷") {
             if (operators.some(operator => document.getElementById('calc').innerHTML.includes(operator))) {
                 return;

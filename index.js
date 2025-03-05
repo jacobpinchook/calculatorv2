@@ -22,23 +22,33 @@ function operate(arr) {
     op = arr[1];
     val2 = Number(arr[2]);
     if (op == '+') {
-        document.getElementById('calc').innerHTML = add(val1, val2);
-        currentInput = add(val1, val2);
+        let answer = add(val1, val2);
+        if (answer % 1 != 0) {
+            answer = answer.toFixed(2);
+        }  
+        document.getElementById('calc').innerHTML = answer;
+        currentInput = answer;
     } else if (op == '-') {
-        document.getElementById('calc').innerHTML = subtract(val1, val2);
-        currentInput = subtract(val1, val2);
+        let answer = subtract(val1, val2);
+        if (answer % 1 != 0) {
+            answer = answer.toFixed(2);
+        }  
+        document.getElementById('calc').innerHTML = answer;
+        currentInput = answer;
     } else if (op == 'x') {
-        document.getElementById('calc').innerHTML = multiply(val1, val2);
-        currentInput = multiply(val1, val2);
+        let answer = multiply(val1, val2);
+        if (answer % 1 != 0) {
+            answer = answer.toFixed(2);
+        }  
+        document.getElementById('calc').innerHTML = answer;
+        currentInput = answer;
     } else if (op == '÷') {
-        // let answer = divide(val1, val2);
-        // if (answer.includes(".")) {
-        //     (answer = answer.toFixed(2));
-        // } else {
-        //     answer;
-        // }    
-        document.getElementById('calc').innerHTML = divide(val1, val2);
-        currentInput = divide(val1, val2);
+        let answer = divide(val1, val2);
+        if (answer % 1 != 0) {
+            answer = answer.toFixed(2);
+        }  
+        document.getElementById('calc').innerHTML = answer;
+        currentInput = answer;
     }    
 }
 
@@ -66,11 +76,6 @@ container.addEventListener('click', function(event) {
         // Stores the value of the clicked button
         const value = event.target.textContent;
         console.log('Clicked div value:', value);
-
-        // if (document.getElementById('calc').innerHTML.length >= 10) {
-
-        //     return;
-        // }
 
         // Add checks for appending a value
         console.log(value);

@@ -94,6 +94,12 @@ container.addEventListener('click', function(event) {
             } else {
                 appendValue(value);
             }
+        } else if (value == ".") {
+            if (document.getElementById('calc').innerHTML.includes(".")) {
+                return;
+            } else {
+                appendValue(value);
+            }
         } else { 
             appendValue(value);
         }

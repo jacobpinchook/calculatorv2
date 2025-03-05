@@ -23,28 +23,28 @@ function operate(arr) {
     val2 = Number(arr[2]);
     if (op == '+') {
         let answer = add(val1, val2);
-        if (answer % 1 != 0) {
+        if (answer % 1 != 0 && answer.length > 8) {
             answer = answer.toFixed(2);
         }  
         document.getElementById('calc').innerHTML = answer;
         currentInput = answer;
     } else if (op == '-') {
         let answer = subtract(val1, val2);
-        if (answer % 1 != 0) {
+        if (answer % 1 != 0 && answer.length > 8) {
             answer = answer.toFixed(2);
         }  
         document.getElementById('calc').innerHTML = answer;
         currentInput = answer;
     } else if (op == 'x') {
         let answer = multiply(val1, val2);
-        if (answer % 1 != 0) {
+        if (answer % 1 != 0 && answer.length > 8) {
             answer = answer.toFixed(2);
         }  
         document.getElementById('calc').innerHTML = answer;
         currentInput = answer;
     } else if (op == '÷') {
         let answer = divide(val1, val2);
-        if (answer % 1 != 0) {
+        if (answer % 1 != 0 && answer.length > 8) {
             answer = answer.toFixed(2);
         }  
         document.getElementById('calc').innerHTML = answer;
